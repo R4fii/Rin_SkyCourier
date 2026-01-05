@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rin: Sky Courier - Official Site</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Press Start 2P (Retro) & Poppins (Modern) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .font-retro { font-family: 'Press Start 2P', cursive; }
+        .font-body { font-family: 'Poppins', sans-serif; }
+        
+        /* Animasi Awan */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-float-delay { animation: float 8s ease-in-out infinite 1s; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #1a202c; }
+        ::-webkit-scrollbar-thumb { background: #4299e1; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #ecc94b; }
+    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sky: { 400: '#63b3ed', 500: '#4299e1', 900: '#1a202c' },
+                        gold: { 400: '#ecc94b', 500: '#d69e2e' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-sky-900 text-white font-body overflow-x-hidden">
+
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 bg-sky-900/90 backdrop-blur-md border-b border-sky-700">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="font-retro text-gold-400 text-lg sm:text-xl tracking-tighter hover:text-white transition cursor-pointer">RIN: SC</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="hover:text-gold-400 px-3 py-2 rounded-md text-sm font-medium transition">Home</a>
+                        <a href="#story" class="hover:text-gold-400 px-3 py-2 rounded-md text-sm font-medium transition">Story</a>
+                        <a href="#features" class="hover:text-gold-400 px-3 py-2 rounded-md text-sm font-medium transition">Features</a>
+                        <a href="#gallery" class="hover:text-gold-400 px-3 py-2 rounded-md text-sm font-medium transition">Gallery</a>
+                        <a href="#download" class="bg-gold-500 hover:bg-gold-400 text-sky-900 px-4 py-2 rounded-full text-sm font-bold transition shadow-lg hover:shadow-gold-500/50">Download</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button (Hamburger) -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="bg-sky-800 p-2 rounded-md text-gray-400 hover:text-white hover:bg-sky-700 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-sky-800" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-sky-700">Home</a>
+                <a href="#story" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-sky-700">Story</a>
+                <a href="#download" class="block px-3 py-2 rounded-md text-base font-bold text-gold-400 hover:bg-sky-700">Download</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-sky-400 via-sky-600 to-sky-900 z-0"></div>
+        <div class="absolute top-20 left-10 w-32 h-12 bg-white/20 rounded-full blur-xl animate-float z-0"></div>
+        <div class="absolute top-40 right-20 w-48 h-16 bg-white/10 rounded-full blur-xl animate-float-delay z-0"></div>
+
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <div class="mb-6 inline-block px-4 py-1 rounded-full border border-gold-400/50 bg-gold-400/10 text-gold-400 text-xs sm:text-sm font-semibold tracking-wide uppercase">
+                Play in Browser (No Download)
+            </div>
+            <h1 class="font-retro text-4xl sm:text-6xl md:text-7xl mb-6 text-white drop-shadow-[0_5px_5px_rgba(0,0,0,0.5)]">
+                RIN:<br><span class="text-gold-400">SKY COURIER</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-sky-100 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Terbang menembus badai, antarkan paket ke Menara Zenith. Game platformer presisi yang menguji kesabaran dan keahlianmu.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                
+                <!-- TOMBOL MAIN LANGSUNG (WEB VERSION) -->
+                <!-- Pastikan nama file game kamu sudah diubah jadi 'game.html' -->
+                <a href="./game.html" class="group bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-8 rounded-lg shadow-xl transition transform hover:-translate-y-1 flex items-center justify-center gap-2 border-b-4 border-blue-800 hover:border-blue-700">
+                    <i class="fas fa-play text-xl"></i> Mainkan Sekarang (Web)
+                </a>
+                
+                <a href="#download" class="bg-transparent border-2 border-white hover:bg-white/10 text-white font-bold py-4 px-8 rounded-lg transition flex items-center justify-center gap-2">
+                    <i class="fas fa-download"></i> Download EXE
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-0 w-full h-32 bg-gradient-to-t from-sky-900 to-transparent z-10"></div>
+    </section>
+
+    <!-- STORY SECTION -->
+    <section id="story" class="py-20 bg-sky-900 relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Image Placeholder -->
+                <div class="relative group">
+                    <div class="absolute -inset-2 bg-gradient-to-r from-gold-400 to-sky-400 rounded-2xl blur opacity-30 group-hover:opacity-75 transition duration-1000"></div>
+                    <div class="relative bg-sky-800 rounded-xl overflow-hidden border border-sky-700 shadow-2xl flex items-center justify-center">
+                        <!-- SCREENSHOT STORY: Main Menu -->
+                        <img src="Menu.png" alt="Rin Sky Courier Main Menu" class="w-full h-auto object-cover transform hover:scale-105 transition duration-700">
+                    </div>
+                </div>
+                
+                <!-- Text Content -->
+                <div>
+                    <h2 class="font-retro text-2xl sm:text-3xl text-gold-400 mb-6 leading-normal">
+                        THE SKY IS NOT<br>YOUR FRIEND
+                    </h2>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Di dunia Verdantia, daratan hanyalah mitos. Manusia hidup di pulau-pulau terapung, dan satu-satunya penghubung mereka adalah para <strong>Sky Couriers</strong>.
+                    </p>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Kamu bermain sebagai <strong>Rin</strong>, kurir pemula yang menerima tugas mustahil: Mengantar paket ke puncak Menara Zenith di tengah badai abadi.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-sky-200">
+                            <i class="fas fa-check-circle text-gold-400 mr-3"></i> 3 Act Level yang menantang
+                        </li>
+                        <li class="flex items-center text-sky-200">
+                            <i class="fas fa-check-circle text-gold-400 mr-3"></i> Mekanisme angin & cuaca dinamis
+                        </li>
+                        <li class="flex items-center text-sky-200">
+                            <i class="fas fa-check-circle text-gold-400 mr-3"></i> Power-up: Speed, Iron Boots, Wings
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES GRID -->
+    <section id="features" class="py-20 bg-sky-800/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+            <h2 class="font-retro text-2xl sm:text-3xl text-white mb-16">KEY FEATURES</h2>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-sky-900 p-8 rounded-xl border border-sky-700 hover:border-gold-400 transition group">
+                    <div class="w-14 h-14 bg-sky-800 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gold-500 transition">
+                        <i class="fas fa-wind text-2xl text-gold-400 group-hover:text-sky-900"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">Dynamic Wind</h3>
+                    <p class="text-sky-300 text-sm">Angin bukan sekadar hiasan. Ia bisa mendorongmu jatuh atau membantumu melompat lebih jauh.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-sky-900 p-8 rounded-xl border border-sky-700 hover:border-gold-400 transition group">
+                    <div class="w-14 h-14 bg-sky-800 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gold-500 transition">
+                        <i class="fas fa-gamepad text-2xl text-gold-400 group-hover:text-sky-900"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">Tight Controls</h3>
+                    <p class="text-sky-300 text-sm">Kontrol presisi yang responsif. Tidak ada input lag, hanya skill murni.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-sky-900 p-8 rounded-xl border border-sky-700 hover:border-gold-400 transition group">
+                    <div class="w-14 h-14 bg-sky-800 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gold-500 transition">
+                        <i class="fas fa-palette text-2xl text-gold-400 group-hover:text-sky-900"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">Retro Pixel Art</h3>
+                    <p class="text-sky-300 text-sm">Grafis pixel art minimalis yang memanjakan mata dengan palet warna langit yang segar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="py-20 bg-sky-900">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h2 class="font-retro text-2xl sm:text-3xl text-white mb-12">SCREENSHOTS</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                
+                <!-- Screenshot 1 -->
+                <div class="rounded-lg overflow-hidden border-2 border-sky-700 hover:border-gold-400 transition cursor-pointer shadow-xl">
+                    <img src="Gameplay.png" class="w-full h-auto hover:scale-105 transition transform duration-500">
+                </div>
+
+                <!-- Screenshot 2 -->
+                <div class="rounded-lg overflow-hidden border-2 border-sky-700 hover:border-gold-400 transition cursor-pointer shadow-xl">
+                    <img src="Gameplay2.png" class="w-full h-auto hover:scale-105 transition transform duration-500">
+                </div>
+
+                <!-- Screenshot 3 -->
+                <div class="rounded-lg overflow-hidden border-2 border-sky-700 hover:border-gold-400 transition cursor-pointer shadow-xl">
+                    <img src="Menu.png" class="w-full h-auto hover:scale-105 transition transform duration-500">
+                </div>
+
+                <!-- Screenshot 4 -->
+                <div class="rounded-lg overflow-hidden border-2 border-sky-700 hover:border-gold-400 transition cursor-pointer shadow-xl">
+                    <img src="Gameplay3.png" class="w-full h-auto hover:scale-105 transition transform duration-500">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- DOWNLOAD SECTION -->
+    <section id="download" class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-sky-800 to-sky-900"></div>
+        <div class="relative max-w-4xl mx-auto px-4 text-center">
+            <h2 class="font-retro text-3xl sm:text-4xl text-white mb-4">DOWNLOAD GRATIS</h2>
+            <p class="text-sky-200 mb-12">Mainkan sekarang, tanpa ribet. DRM-Free.</p>
+            
+            <div class="bg-sky-900/80 backdrop-blur-lg border border-sky-600 rounded-2xl p-8 sm:p-12 shadow-2xl relative">
+                
+                <div class="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                    <!-- WINDOWS DOWNLOAD -->
+                    <!-- Pastikan nama file .exe kamu sesuai di sini -->
+                    <a href="./RinSkyCourier-Windows.exe" download class="group flex flex-col items-center justify-center gap-3 bg-blue-600 hover:bg-blue-500 text-white font-bold py-6 px-6 rounded-xl transition shadow-lg transform hover:-translate-y-1 w-full border border-blue-400">
+                        <i class="fab fa-windows text-4xl mb-2"></i>
+                        <span class="text-xl">Download for Windows</span>
+                        <span class="text-xs font-normal opacity-75 bg-black/20 px-2 py-1 rounded">Portable .exe (64-bit)</span>
+                    </a>
+                    
+                    <!-- LINUX DOWNLOAD -->
+                    <!-- Pastikan nama file Linux kamu sesuai di sini -->
+                    <a href="./RinSkyCourier-Linux" download class="group flex flex-col items-center justify-center gap-3 bg-orange-600 hover:bg-orange-500 text-white font-bold py-6 px-6 rounded-xl transition shadow-lg transform hover:-translate-y-1 w-full border border-orange-400">
+                        <i class="fab fa-linux text-4xl mb-2"></i>
+                        <span class="text-xl">Download for Linux</span>
+                        <span class="text-xs font-normal opacity-75 bg-black/20 px-2 py-1 rounded">Binary (x64)</span>
+                    </a>
+                </div>
+                
+                <div class="mt-8 pt-6 border-t border-sky-700">
+                    <p class="text-sky-400 text-sm mb-4">Suka dengan gamenya? Traktir developer kopi di sini:</p>
+                    <a href="https://saweria.co/widgets/qr?streamKey=0b63aa787a54a0e4a9ec9a3135759e6d" target="_blank" class="inline-block bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-2 px-6 rounded-full text-sm transition">
+                        <i class="fas fa-coffee mr-2"></i> Trakteer / Saweria
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-sky-950 py-10 border-t border-sky-800">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <span class="font-retro text-gold-500 text-lg block mb-2">RIN: SC</span>
+                <p class="text-sky-400 text-sm">© 2025 Rafii Rahmadiansyah. All Rights Reserved.</p>
+            </div>
+            
+            <div class="flex gap-6">
+                <a href="https://x.com/sk0nes33" class="text-sky-400 hover:text-white transition"><i class="fab fa-twitter text-xl"></i></a>
+                <a href="https://www.instagram.com/sk0nes.33/" class="text-sky-400 hover:text-white transition"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="https://github.com/sk0nes" class="text-sky-400 hover:text-white transition"><i class="fab fa-github text-xl"></i></a>
+                <a href="mailto:pokemobs17@gmail.com" class="text-sky-400 hover:text-white transition"><i class="fas fa-envelope text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
