@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+    <title>Rin: Sky Courier - Play Now</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1a202c; /* Background Gelap biar fokus */
+            overflow: hidden;
+            font-family: sans-serif;
+        }
+        canvas {
+            box-shadow: 0 0 20px rgba(0,0,0,0.5); /* Efek Bayangan Canvas */
+            border-radius: 4px;
+        }
+        /* Tombol Kembali ke Menu Utama Website */
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #ecc94b;
+            color: #1a202c;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 5px;
+            z-index: 1000;
+            font-family: 'Courier New', monospace;
+        }
+        .back-btn:hover {
+            background: #d69e2e;
+        }
+    </style>
+  </head>
+  <body>
+    <!-- Tombol Kembali ke Landing Page -->
+    <a href="index.html" class="back-btn">← BACK TO HOME</a>
+
+    <main>
+    </main>
+    <script src="sketch_demo.js"></script>
+  </body>
+</html>
